@@ -140,7 +140,7 @@ def balance():
 align()
 tim.callback(issr) #start interrupt routine
 balance()
-tim.callback(None) #start interrupt routine
+tim.callback(None) #stop interrupt routine
          
    
         
