@@ -17,7 +17,7 @@ class Stepper:
         self.pulserate = 100
         self.count = 0
         self.speed = 0
-        self.MAX_ACCEL = 100   #equivallent to 10000 usteps/sec/sec
+        self.MAX_ACCEL = 100   #equivallent to 100 x (periodicity of set_speed) usteps/sec/sec
  
 
     def do_step(self):   # called by timer interrupt every 100us
@@ -29,7 +29,7 @@ class Stepper:
             pass
             self.step_pin.low()
         
-    def set_speed(self, speed): #called every 10ms
+    def set_speed(self, speed): #called periodically
         if (self.speed - speed) > self.MAX_ACCEL:
             self.speed -= self.MAX_ACCEL
         elif (self.speed - speed)< -self.MAX_ACCEL:
