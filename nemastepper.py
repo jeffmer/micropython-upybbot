@@ -4,7 +4,7 @@ import pyb
 
 class Stepper:
     """
-    Handles bipolar A4988 motor controllers
+    Handles  A4988 hardware driver for bipolar stepper motors
     """
 
     
